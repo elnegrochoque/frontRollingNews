@@ -1,0 +1,17 @@
+{
+    "noticia": [
+      {
+        "tituloNoticia": "bizcochitos",
+        "tituloExtendido": "80",
+        "urlImagen": "salado",
+        "descripcionImagen": "",
+        "fecha":"10/05/2021",
+        "hora":"20:00",
+        "autor":"juan perez",
+        "categoria":"actualidad",
+        "descripcionNoticia":"asdasdasd",
+        "cuerpoNoticia":"aasdsad"
+      }  
+  
+    ]
+  }
