@@ -1,9 +1,9 @@
 import "./App.css";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Admin from "./components/administracion/Admin";
-import PaginaPrincipal from "./PaginaPrincipal";
+import PaginaPrincipal from "./components/paginaPrincipal/PaginaPrincipal";
 
 
 function App() {
@@ -28,11 +28,11 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path="/">
+          <PaginaPrincipal noticias={noticias} consultarAPI={consultarAPI} />
+        </Route>
         <Route exact path="/admin">
           <Admin noticias={noticias} consultarAPI={consultarAPI}></Admin>
-        </Route>
-        <Route exact path="/inicio">
-          <PaginaPrincipal noticias={noticias} consultarAPI={consultarAPI} />
         </Route>
       </Switch>
     </Router>
