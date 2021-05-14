@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { Container, ListGroup, Row, Col, Dropdown, Button } from 'react-bootstrap';
 import ItemNoticia from './ItemNoticia';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faTrashAlt, faPencilAlt, faSearch } from '@fortawesome/free-solid-svg-icons';
+// import { faTrashAlt, faPencilAlt, faSearch } from '@fortawesome/free-solid-svg-icons';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import Categoria from './Categoria';
 
@@ -25,11 +25,12 @@ const Admin = (props) => {
             <Container className='my-5'>
                 <Row>
                     <Col><h1 className=' mb-5'>Administrador</h1></Col>
-
+         
                     <Col>
                         <Dropdown>
+
                             <Dropdown.Toggle variant="light" id="dropdown-basic">
-                                Categorias <span><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></span>
+                                Categorias  {/*<span><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></span>*/}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 {categoriasSinRepetir.map((cat) =>
