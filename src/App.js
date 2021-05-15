@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import Admin from './components/administracion/Admin';
+import NuevaNoticia from './components/administracion/NuevaNoticia';
+import EditarNoticia from './components/administracion/EditarNoticia';
 
 function App() {
   const URL = process.env.REACT_APP_API_URL;
@@ -24,15 +26,20 @@ function App() {
     }
   }
   return (
-    <Router>      
+    <Router>
       <Switch>
         <Route exact path="/admin">
           <Admin noticias={noticias} consultarAPI={consultarAPI}></Admin>
-         
         </Route>
-      
+        <Route exact path="/admin/nuevanoticia">
+          <NuevaNoticia noticias={noticias} consultarAPI={consultarAPI}> </NuevaNoticia>
+        </Route>
+        <Route exact path="/admin/editarnoticia/:id">
+          <EditarNoticia noticias={noticias} consultarAPI={consultarAPI}></EditarNoticia>
+          
+        </Route>
       </Switch>
-     
+
     </Router>
   );
 }

@@ -3,8 +3,8 @@ import { Container, Form, Button, Alert, Row, Col } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { withRouter } from "react-router-dom";
 import Categoria from "./Categoria";
-const EditarNoticia = () => {
-    const URL = process.env.REACT_APP_API_URL;
+const NuevaNoticia = () => {
+  const URL = process.env.REACT_APP_API_URL;
 
   const [tituloNoticia, setTituloNoticia] = useState("");
   const [tituloExtNoticia, setTituloExtNoticia] = useState("");
@@ -19,16 +19,16 @@ const EditarNoticia = () => {
 
   const [error, setError] = useState(false);
   const handleSubmit = (e) => {};
-    return (
-        <div>
-             <Fragment>
+
+  return (
+    <Fragment>
       <Container className="my-4">
         <Row>
           <Col>
             <p className="font-weight-bold display-4">Administrador</p>
           </Col>
           <Col>
-            <p className="text-danger display-4">Editar Noticia</p>
+            <p className="text-danger display-4">Nueva Noticia</p>
           </Col>
           <Col className="d-flex align-self-center justify-content-end">
             <Button size="lg" type="submit" variant="dark">
@@ -137,8 +137,7 @@ const EditarNoticia = () => {
         </Form>
       </Container>
     </Fragment>
-        </div>
-    );
+  );
 };
 
-export default EditarNoticia;
+export default NuevaNoticia;
