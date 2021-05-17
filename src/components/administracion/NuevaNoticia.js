@@ -60,7 +60,6 @@ const NuevaNoticia = (props) => {
       // crear el objeto a enviar
       const datos = {
         tituloNoticia: tituloNoticia,
-
         tituloExtendido: tituloExtNoticia,
         urlImagen: imagenNoticia,
         descripcionImagen: descripcionImagenNoticia,
@@ -97,8 +96,8 @@ const NuevaNoticia = (props) => {
           //       setPrecioProducto('');
           //       setCategoria('');
           // redireccionar a otra ruta
-          //       props.consultarAPI();
-          //       props.history.push('/productos')
+          props.consultarAPI();
+          props.history.push('/admin')
         }
       } catch (error) {
         console.log(error);
@@ -179,8 +178,8 @@ const NuevaNoticia = (props) => {
               <Form.Group>
                 <Form.Label>Fecha </Form.Label>
                 <Form.Control
-                  type="text"
-                  placeholder="1 de Enero 2020"
+                  type="date"
+                
                   onChange={(e) => setFechaNoticia(e.target.value)}
                   value={fechaNoticia}
                 ></Form.Control>
@@ -190,7 +189,7 @@ const NuevaNoticia = (props) => {
               <Form.Group>
                 <Form.Label>Hora</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="time"
                   placeholder="20:45"
                   onChange={(e) => setHoraNoticia(e.target.value)}
                   value={horaNoticia}
@@ -263,4 +262,4 @@ const NuevaNoticia = (props) => {
   );
 };
 
-export default NuevaNoticia;
+export default withRouter (NuevaNoticia);

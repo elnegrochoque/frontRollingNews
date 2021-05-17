@@ -51,32 +51,6 @@
       "descripcionNoticia": "asdasdasd",
       "cuerpoNoticia": "aasdsad",
       "id": 4
-    },
-    {
-      "tituloNoticia": "titulo",
-      "tituloExtNoticia": "tituloext",
-      "imagenNoticia": "urlimagen",
-      "descripcionImagenNoticia": "descripcionimagen",
-      "fechaNoticia": "fecha",
-      "horaNoticia": "hora",
-      "autorNoticia": "autor",
-      "categoriaNoticia": "actualidad",
-      "descripcionPequeñaNoticia": "descripcion pequeña de la noticia",
-      "cuerpoNoticia": "cuerop de la noticiaa",
-      "id": 5
-    },
-    {
-      "tituloNoticia": "1",
-      "tituloExtendido": "1",
-      "urlImagen": "1",
-      "descripcionImagen": "1",
-      "fecha": "1",
-      "hora": "1",
-      "autor": "1",
-      "categoria": "actualidad",
-      "descripcionNoticia": "1",
-      "cuerpoNoticia": "1",
-      "id": 6
     }
   ]
 }
