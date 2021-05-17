@@ -1,24 +1,111 @@
 import React, { Fragment, useState } from "react";
-import { Container, Form, Button, Alert, Row, Col } from "react-bootstrap";
+import { Container, Form, Button, Alert, Row, Col, Dropdown, DropdownButton, ButtonGroup, FormGroup } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { withRouter } from "react-router-dom";
 import Categoria from "./Categoria";
-const NuevaNoticia = () => {
+import DropdownItem from "react-bootstrap/esm/DropdownItem";
+const NuevaNoticia = (props) => {
   const URL = process.env.REACT_APP_API_URL;
 
   const [tituloNoticia, setTituloNoticia] = useState("");
   const [tituloExtNoticia, setTituloExtNoticia] = useState("");
   const [imagenNoticia, setImagenNoticia] = useState("");
   const [descripcionImagenNoticia, setDescripcionImagenNoticia] = useState("");
-  const [fechaYHoraNoticia, setFechaYHoraNoticia] = useState("");
+  const [fechaNoticia, setFechaNoticia] = useState("");
+  const [horaNoticia, setHoraNoticia] = useState("");
   const [autorNoticia, setAutorNoticia] = useState("");
   const [categoriaNoticia, setCategoriaNoticia] = useState("");
-  const [descripcionPequeñaNoticia, setDescripcionPequeñaNoticia] =
-    useState("");
+  const [descripcionPequeñaNoticia, setDescripcionPequeñaNoticia] = useState("");
   const [cuerpoNoticia, setCuerpoNoticia] = useState("");
-
+  const [tituloDropdownCategoria, setTituloDropdownCategoria] = useState("categoria");
   const [error, setError] = useState(false);
-  const handleSubmit = (e) => {};
+
+  const cadaCategoria = [];
+  for (const i in props.noticias) {
+    cadaCategoria.push(props.noticias[i].categoria)
+  }
+
+  const unique = (value, index, self) => {
+    return self.indexOf(value) === index
+  }
+  const categoriasSinRepetir = cadaCategoria.filter(unique)
+  console.log(categoriasSinRepetir);
+
+  const cambiarCategoria = (e) => {
+    setTituloDropdownCategoria(e.target.name);
+    setCategoriaNoticia(e.target.name);
+  }
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("hola")
+    //  validar los datos
+    if (tituloNoticia.trim() === ''
+      || tituloExtNoticia.trim() === ''
+      || imagenNoticia.trim() === ''
+      || descripcionImagenNoticia.trim() === ''
+      || fechaNoticia.trim() === ''
+      || horaNoticia.trim() === ''
+      || autorNoticia.trim() === ''
+      || descripcionPequeñaNoticia.trim() === ''
+      || cadaCategoria === '') {
+      // mostrar el cartel de error
+      setError(true);
+      return;
+    } else {
+      // quitar cartel de error
+      setError(false);
+
+      // crear el objeto a enviar
+      const datos = {
+        tituloNoticia: tituloNoticia,
+
+        tituloExtendido: tituloExtNoticia,
+        urlImagen: imagenNoticia,
+        descripcionImagen: descripcionImagenNoticia,
+        fecha: fechaNoticia,
+        hora: horaNoticia,
+        autor: autorNoticia,
+        categoria: categoriaNoticia,
+        descripcionNoticia: descripcionPequeñaNoticia,
+        cuerpoNoticia: cuerpoNoticia,
+
+      };
+      console.log(datos);
+
+      //enviar objetoa la api, operacion POST
+      try {
+        const parametros = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(datos)
+        };
+        // ejecutar la solicitud o request
+        const respuesta = await fetch(URL, parametros);
+
+        if ((await respuesta.status) === 201) {
+          Swal.fire(
+            'Producto agregado',
+            'Se carga un nuevo producto a la cafeteria',
+            'success'
+          )
+          //limpiar el formulario
+          //       setNombreProducto('');
+          //       setPrecioProducto('');
+          //       setCategoria('');
+          // redireccionar a otra ruta
+          //       props.consultarAPI();
+          //       props.history.push('/productos')
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    // enviar el producto a la api
+  };
 
   return (
     <Fragment>
@@ -30,16 +117,15 @@ const NuevaNoticia = () => {
           <Col>
             <p className="text-danger display-4">Nueva Noticia</p>
           </Col>
-          <Col className="d-flex align-self-center justify-content-end">
-            <Button size="lg" type="submit" variant="dark">
-              Guardar
-            </Button>
-          </Col>
+
         </Row>
         {error === true ? (
           <Alert variant={"danger"}>Todos los campos son obligatorios</Alert>
         ) : null}
         <Form onSubmit={handleSubmit}>
+          <Col className="d-flex align-self-center justify-content-end">
+
+          </Col>
           <Row>
             <Col>
               <Form.Group>
@@ -91,12 +177,23 @@ const NuevaNoticia = () => {
           <Row>
             <Col>
               <Form.Group>
-                <Form.Label>Fecha y hora</Form.Label>
+                <Form.Label>Fecha </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="1 de Enero 2020, 20:45"
-                  onChange={(e) => setFechaYHoraNoticia(e.target.value)}
-                  value={fechaYHoraNoticia}
+                  placeholder="1 de Enero 2020"
+                  onChange={(e) => setFechaNoticia(e.target.value)}
+                  value={fechaNoticia}
+                ></Form.Control>
+              </Form.Group>
+            </Col>
+            <Col xs={2}>
+              <Form.Group>
+                <Form.Label>Hora</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="20:45"
+                  onChange={(e) => setHoraNoticia(e.target.value)}
+                  value={horaNoticia}
                 ></Form.Control>
               </Form.Group>
             </Col>
@@ -112,13 +209,33 @@ const NuevaNoticia = () => {
               </Form.Group>
             </Col>
             <Col>
+              <Form.Label>Elija categoria</Form.Label>
+              <DropdownButton id="dropdown-basic-button" variant="dark" title={tituloDropdownCategoria} size="lg"
+              >
+                {categoriasSinRepetir.map((cat, index) => (
+                  <DropdownItem key={index}
+                    name={categoriasSinRepetir[index]}
+                    value={categoriasSinRepetir[index]}
+                    onClick={(e) => cambiarCategoria(e)}>
+
+                    {categoriasSinRepetir[index]}
+                  </DropdownItem>
+                )
+                )
+                }
+
+              </DropdownButton>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
               <Form.Group>
-                <Form.Label>Categoria</Form.Label>
+                <Form.Label>Descripcion pequeña de la noticia</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Categoria"
-                  onChange={(e) => setCategoriaNoticia(e.target.value)}
-                  value={categoriaNoticia}
+                  placeholder="Descripcion pequeña de la noticia"
+                  onChange={(e) => setDescripcionPequeñaNoticia(e.target.value)}
+                  value={descripcionPequeñaNoticia}
                 ></Form.Control>
               </Form.Group>
             </Col>
@@ -134,6 +251,12 @@ const NuevaNoticia = () => {
               rows="6"
             ></Form.Control>
           </Form.Group>
+          <FormGroup className="text-center">
+            <Button size="lg" type="submit" variant="dark">
+              Guardar
+          </Button>
+          </FormGroup>
+
         </Form>
       </Container>
     </Fragment>

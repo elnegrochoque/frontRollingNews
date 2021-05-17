@@ -1,56 +1,82 @@
 {
-    "noticia": [
-      {
-        "tituloNoticia": "papa",
-        "tituloExtendido": "80",
-        "urlImagen": "salado",
-        "descripcionImagen": "",
-        "fecha":"10/05/2021",
-        "hora":"20:00",
-        "autor":"juan perez",
-        "categoria":"actualidad",
-        "descripcionNoticia":"asdasdasd",
-        "cuerpoNoticia":"aasdsad",
-        "id":1
-      },  
-      {
-        "tituloNoticia": "pepe",
-        "tituloExtendido": "80",
-        "urlImagen": "salado",
-        "descripcionImagen": "",
-        "fecha":"10/05/2021",
-        "hora":"20:00",
-        "autor":"juan perez",
-        "categoria":"actualidad",
-        "descripcionNoticia":"asdasdasd",
-        "cuerpoNoticia":"aasdsad",
-        "id":2
-      },  
-      {
-        "tituloNoticia": "pipi",
-        "tituloExtendido": "80",
-        "urlImagen": "salado",
-        "descripcionImagen": "",
-        "fecha":"10/05/2021",
-        "hora":"20:00",
-        "autor":"juan perez",
-        "categoria":"deportes",
-        "descripcionNoticia":"asdasdasd",
-        "cuerpoNoticia":"aasdsad",
-        "id":3
-      },  
-      {
-        "tituloNoticia": "popo",
-        "tituloExtendido": "80",
-        "urlImagen": "salado",
-        "descripcionImagen": "",
-        "fecha":"10/05/2021",
-        "hora":"20:00",
-        "autor":"juan perez",
-        "categoria":"actualidad",
-        "descripcionNoticia":"asdasdasd",
-        "cuerpoNoticia":"aasdsad",
-        "id":4
-      }
-    ]
-  }
+  "noticia": [
+    {
+      "tituloNoticia": "papa",
+      "tituloExtendido": "80",
+      "urlImagen": "salado",
+      "descripcionImagen": "",
+      "fecha": "10/05/2021",
+      "hora": "20:00",
+      "autor": "juan perez",
+      "categoria": "actualidad",
+      "descripcionNoticia": "asdasdasd",
+      "cuerpoNoticia": "aasdsad",
+      "id": 1
+    },
+    {
+      "tituloNoticia": "pepe",
+      "tituloExtendido": "80",
+      "urlImagen": "salado",
+      "descripcionImagen": "",
+      "fecha": "10/05/2021",
+      "hora": "20:00",
+      "autor": "juan perez",
+      "categoria": "actualidad",
+      "descripcionNoticia": "asdasdasd",
+      "cuerpoNoticia": "aasdsad",
+      "id": 2
+    },
+    {
+      "tituloNoticia": "pipi",
+      "tituloExtendido": "80",
+      "urlImagen": "salado",
+      "descripcionImagen": "",
+      "fecha": "10/05/2021",
+      "hora": "20:00",
+      "autor": "juan perez",
+      "categoria": "deportes",
+      "descripcionNoticia": "asdasdasd",
+      "cuerpoNoticia": "aasdsad",
+      "id": 3
+    },
+    {
+      "tituloNoticia": "popo",
+      "tituloExtendido": "80",
+      "urlImagen": "salado",
+      "descripcionImagen": "",
+      "fecha": "10/05/2021",
+      "hora": "20:00",
+      "autor": "juan perez",
+      "categoria": "actualidad",
+      "descripcionNoticia": "asdasdasd",
+      "cuerpoNoticia": "aasdsad",
+      "id": 4
+    },
+    {
+      "tituloNoticia": "titulo",
+      "tituloExtNoticia": "tituloext",
+      "imagenNoticia": "urlimagen",
+      "descripcionImagenNoticia": "descripcionimagen",
+      "fechaNoticia": "fecha",
+      "horaNoticia": "hora",
+      "autorNoticia": "autor",
+      "categoriaNoticia": "actualidad",
+      "descripcionPequeñaNoticia": "descripcion pequeña de la noticia",
+      "cuerpoNoticia": "cuerop de la noticiaa",
+      "id": 5
+    },
+    {
+      "tituloNoticia": "1",
+      "tituloExtendido": "1",
+      "urlImagen": "1",
+      "descripcionImagen": "1",
+      "fecha": "1",
+      "hora": "1",
+      "autor": "1",
+      "categoria": "actualidad",
+      "descripcionNoticia": "1",
+      "cuerpoNoticia": "1",
+      "id": 6
+    }
+  ]
+}
