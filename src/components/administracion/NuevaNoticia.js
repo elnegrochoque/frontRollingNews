@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from "react";
-import { Container, Form, Button, Alert, Row, Col, Dropdown, DropdownButton, ButtonGroup, FormGroup } from "react-bootstrap";
+import { Container, Form, Button, Alert, Row, Col, DropdownButton, FormGroup } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { withRouter } from "react-router-dom";
-import Categoria from "./Categoria";
+
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 const NuevaNoticia = (props) => {
   const URL = process.env.REACT_APP_API_URL;
@@ -29,7 +29,7 @@ const NuevaNoticia = (props) => {
     return self.indexOf(value) === index
   }
   const categoriasSinRepetir = cadaCategoria.filter(unique)
-  console.log(categoriasSinRepetir);
+
 
   const cambiarCategoria = (e) => {
     setTituloDropdownCategoria(e.target.name);
@@ -39,7 +39,7 @@ const NuevaNoticia = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("hola")
+
     //  validar los datos
     if (tituloNoticia.trim() === ''
       || tituloExtNoticia.trim() === ''
@@ -71,7 +71,7 @@ const NuevaNoticia = (props) => {
         cuerpoNoticia: cuerpoNoticia,
 
       };
-      console.log(datos);
+
 
       //enviar objetoa la api, operacion POST
       try {

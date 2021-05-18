@@ -1,26 +1,39 @@
-import React, { Fragment } from 'react';
-import { Container, ListGroup, Row, Col, Dropdown, Button, Table } from 'react-bootstrap';
+import React, { Fragment, useState } from 'react';
+import { Container,  Row, Col, Dropdown, Button, Table } from 'react-bootstrap';
 import ItemNoticia from './ItemNoticia';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faTrashAlt, faPencilAlt, faSearch } from '@fortawesome/free-solid-svg-icons';
-import DropdownItem from 'react-bootstrap/esm/DropdownItem';
-import Categoria from './Categoria';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 import { Link } from 'react-router-dom';
 
 const Admin = (props) => {
-    console.log(props.noticias);
+    
     const cadaCategoria = [];
     for (const i in props.noticias) {
         cadaCategoria.push(props.noticias[i].categoria)
     }
-    console.log(cadaCategoria);
+  
     const unique = (value, index, self) => {
         return self.indexOf(value) === index
     }
     const categoriasSinRepetir = cadaCategoria.filter(unique)
-    console.log(categoriasSinRepetir);
-    
+    console.log(props.noticias)
+    const [listaOrdenada, setListaOrdenada]=useState([]);
+
+    console.log(listaOrdenada)
+    const ordenarSegunCategoria = (e) =>{
+        const listaOrdenada1=[];
+        for (const i in props.noticias) {
+            
+            if (props.noticias[i].categoria===e.target.innerText) {
+                listaOrdenada1.push(props.noticias[i])
+            }
+            
+        }
+        console.log(listaOrdenada1)
+    setListaOrdenada(listaOrdenada1);
+    }
 
     return (
         <Fragment>
@@ -35,7 +48,7 @@ const Admin = (props) => {
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 {categoriasSinRepetir.map((cat) =>
-                                    <Dropdown.Item className="d-flex justify-content-between" key={cat}>
+                                    <Dropdown.Item className="d-flex justify-content-between" key={cat} onClick={ordenarSegunCategoria}>
                                         {cat}
                                     </Dropdown.Item>
                                 )
@@ -61,8 +74,16 @@ const Admin = (props) => {
                         </tr>
                     </thead>
                     <tbody key="tbody">
-                        {
+                        {(listaOrdenada.length===0)?
                             props.noticias.map((noticia) =>
+                                <ItemNoticia
+                                    noticia={noticia}
+                                    key={noticia.id}
+                                    consultarAPI={props.consultarAPI}>
+                                </ItemNoticia>
+                            )
+                            :
+                            listaOrdenada.map((noticia) =>
                                 <ItemNoticia
                                     noticia={noticia}
                                     key={noticia.id}

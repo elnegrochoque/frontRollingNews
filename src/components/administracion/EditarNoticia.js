@@ -1,27 +1,19 @@
 import React, { Fragment, useEffect, useState, useRef } from "react";
-import { Container, Form, Button, Alert, Row, Col, DropdownButton, ButtonGroup, FormGroup } from "react-bootstrap";
+import { Container, Form, Button, Alert, Row, Col, DropdownButton, FormGroup } from "react-bootstrap";
 import Swal from "sweetalert2";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import{campoRequerido} from "../administracion/Validaciones"
 import { useParams, withRouter } from 'react-router-dom';
-import Categoria from "./Categoria";
+
 const EditarNoticia = (props) => {
   const { id } = useParams();
   const URL = process.env.REACT_APP_API_URL;
 
   const [noticia, setNoticia] = useState({});
 
-  const [tituloNoticia, setTituloNoticia] = useState("");
-  const [tituloExtNoticia, setTituloExtNoticia] = useState("");
-  const [imagenNoticia, setImagenNoticia] = useState("");
-  const [descripcionImagenNoticia, setDescripcionImagenNoticia] = useState("");
-  const [fechaNoticia, setFechaNoticia] = useState("");
-  const [horaNoticia, setHoraNoticia] = useState("");
-  const [autorNoticia, setAutorNoticia] = useState("");
+  
   const [categoriaNoticia, setCategoriaNoticia] = useState("");
-  const [descripcionPequeñaNoticia, setDescripcionPequeñaNoticia] = useState("");
-  const [cuerpoNoticia, setCuerpoNoticia] = useState("");
-  const [tituloDropdownCategoria, setTituloDropdownCategoria] = useState("");
+
   const [error, setError] = useState(false);
   const tituloNoticiaRef = useRef('');
   const tituloExtNoticiaRef = useRef('');
@@ -33,19 +25,20 @@ const EditarNoticia = (props) => {
   const categoriaNoticiaRef = useRef('');
   const descripcionPequeñaNoticiaRef = useRef('');
   const cuerpoNoticiaRef = useRef('');
-
+  
 
   useEffect(() => {
-    consultarProducto();
+    consultarNoticia();
+    
   }, []);
 
-  const consultarProducto = async () => {
+  const consultarNoticia = async () => {
     try {
       const respuesta = await fetch(URL + '/' + id);
       if (respuesta.status === 200) {
         const resultado = await respuesta.json();
         setNoticia(resultado);
-
+      
       }
     } catch (error) {
       console.log(error);
@@ -61,7 +54,8 @@ const EditarNoticia = (props) => {
   }
   const categoriasSinRepetir = cadaCategoria.filter(unique);
   const cambiarCategoria = (e) => {
-    setTituloDropdownCategoria(e.target.name);
+    noticia.categoria=e.target.name
+    
     setCategoriaNoticia(e.target.name);
   }
   const handleSubmit = async (e) => {
@@ -81,19 +75,17 @@ const EditarNoticia = (props) => {
         fecha: fechaNoticiaRef.current.value,
         hora: horaNoticiaRef.current.value,
         autor: autorNoticiaRef.current.value,
-        categoria: categoriaNoticiaRef.current.value,
+        categoria: categoriaNoticia,
         descripcionNoticia: descripcionPequeñaNoticiaRef.current.value,
         cuerpoNoticia: cuerpoNoticiaRef.current.value,
       }
-
-      console.log(noticiaEditado);
       try {
         const respuesta = await fetch(URL + "/" + id, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(noticiaEditado)
         });
-        console.log(respuesta);
+       
         if (respuesta.status === 200) {
           Swal.fire(
             'Producto editado',
@@ -111,7 +103,7 @@ const EditarNoticia = (props) => {
         console.log(error);
       }
     } else {
-      console.log('mostrar el cartel de error');
+      setError(true);
     }
     // si algo falla mostrar alert de error
     // si esta todo bien, enviar la peticion PUT a la api
@@ -219,7 +211,8 @@ const EditarNoticia = (props) => {
             </Col>
             <Col>
               <Form.Label>Elija categoria</Form.Label>
-              <DropdownButton id="dropdown123" variant="dark" title={tituloDropdownCategoria} size="lg"
+              <DropdownButton id="dropdown123" variant="dark" title={noticia.categoria===undefined?
+            "":noticia.categoria} size="lg"
               >
                 {categoriasSinRepetir.map((cat, index) => (
                   <DropdownItem key={index}
