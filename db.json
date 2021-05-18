@@ -53,30 +53,17 @@
       "id": 4
     },
     {
-      "tituloNoticia": "1",
-      "tituloExtendido": "1",
-      "urlImagen": "1",
-      "descripcionImagen": "1",
-      "fecha": "1121-01-01",
-      "hora": "01:10",
-      "autor": "1",
-      "categoria": "deportes",
-      "descripcionNoticia": "1",
-      "cuerpoNoticia": "1",
+      "tituloNoticia": "Este item es una categoria",
+      "tituloExtendido": "",
+      "urlImagen": "",
+      "descripcionImagen": "",
+      "fecha": "",
+      "hora": "",
+      "autor": "",
+      "categoria": "covid",
+      "descripcionNoticia": "",
+      "cuerpoNoticia": "",
       "id": 5
-    },
-    {
-      "tituloNoticia": "3",
-      "tituloExtendido": "3",
-      "urlImagen": "3",
-      "descripcionImagen": "3",
-      "fecha": "2021-12-02",
-      "hora": "23:59",
-      "autor": "3",
-      "categoria": "actualidad",
-      "descripcionNoticia": "2",
-      "cuerpoNoticia": "2",
-      "id": 6
     }
   ]
 }
