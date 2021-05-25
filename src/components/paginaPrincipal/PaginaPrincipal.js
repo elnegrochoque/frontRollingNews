@@ -5,12 +5,13 @@ import Deportes from "./Deportes";
 import Destacado from "./Destacado";
 import Tecnologia from "./Tecnologia";
 import Footer from "../common/Footer";
+import './PaginaPrincipal.css';
 
 const PaginaPrincipal = () => {
   return (
     <>
       <Navegacion></Navegacion>
-      <h1>Esta es la pagina de inicio</h1>
+      <h1 className=" text-center m-4">Noticias Destacadas</h1>
       <Destacado />
       <Actualidad />
       <Deportes />

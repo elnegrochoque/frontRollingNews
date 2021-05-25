@@ -1,10 +1,12 @@
 import React from "react";
 import {Navbar, Nav, Form, NavDropdown, FormControl, Button} from 'react-bootstrap';
 import { NavLink} from 'react-router-dom';
+import './Navegacion.css';
+
 
 const Navegacion = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="">
+    <Navbar style={{position: "sticky"}} bg="dark" variant="dark" expand="lg" fixed="top" className="navegacion">
       <Navbar.Brand href="#home">Rolling News</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
