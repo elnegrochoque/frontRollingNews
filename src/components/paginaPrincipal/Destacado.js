@@ -8,7 +8,7 @@ const Destacado = () => {
   return (
     <Fragment>
       <div className="row mb-5 container-fluid d-flex justify-content-center">
-        <div class="col-lg-12 col-md-12 col-sm-12"></div>
+        <div className="col-lg-12 col-md-12 col-sm-12"></div>
         <section className="col-lg-6">
           <Card className="m-4 noticiaPrincipal ">
             <Card.Img variant="top" src={alberto} className="w-100 " />
