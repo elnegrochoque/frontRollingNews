@@ -11,7 +11,6 @@ const PaginaPrincipal = () => {
   return (
     <>
       <Navegacion></Navegacion>
-      <h1 className=" text-center m-4">Noticias Destacadas</h1>
       <Destacado />
       <Actualidad />
       <Deportes />

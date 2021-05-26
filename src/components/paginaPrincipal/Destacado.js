@@ -7,6 +7,7 @@ import dollar from "../img/destacado/dollars.jpg";
 const Destacado = () => {
   return (
     <Fragment>
+      <h1 className="mx-3 my-4 text-center">Noticias Destacadas</h1>
       <div className="row mb-5 container-fluid d-flex justify-content-center">
         <div className="col-lg-12 col-md-12 col-sm-12"></div>
         <section className="col-lg-6">
