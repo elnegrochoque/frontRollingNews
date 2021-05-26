@@ -31,12 +31,21 @@ const ItemNoticia = (props) => {
                         }
                     });
                     if (response.status === 200) {
+                        if (props.noticia.tituloNoticia === "Este item es una categoria") {
+                            Swal.fire(
+                                'Producto eliminado',
+                                'Para elimnar totalmente una categoria tiene que eliminar todas las noticias que posean esta categoria',
+                                'success'
+                            )
+                        } else {
+                            Swal.fire(
+                                'Producto eliminado',
+                                'El producto seleccionado fue correctamente elminado',
+                                'success'
+                            )
+                        }
                         //mostrar el cartel de prod eliminado
-                        Swal.fire(
-                            'Producto eliminado',
-                            'El producto seleccionado fue correctamente elminado',
-                            'success'
-                        )
+
                         //actualizar los datos
                         props.consultarAPI();
                     }

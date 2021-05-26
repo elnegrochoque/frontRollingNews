@@ -76,8 +76,8 @@ const Admin = (props) => {
         const respuesta = await fetch(URL, parametros);
         if ((await respuesta.status) === 201) {
             Swal.fire(
-                'Producto agregado',
-                'Se carga un nuevo producto a la cafeteria',
+                'Categoria agregada',
+                'Se cargo una nueva categoria',
                 'success'
             )
             props.consultarAPI();
