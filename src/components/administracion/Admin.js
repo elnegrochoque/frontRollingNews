@@ -1,12 +1,17 @@
 import React, { Fragment, useState } from 'react';
 import { Container, Row, Col, Dropdown, Button, Table, Modal, Form,Alert } from 'react-bootstrap';
 import ItemNoticia from './ItemNoticia';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Swal from "sweetalert2";
 
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { Link } from 'react-router-dom';
+
+
+
+
 
 const Admin = (props) => {
     const URL = process.env.REACT_APP_API_URL;
@@ -32,6 +37,7 @@ const Admin = (props) => {
         setListaOrdenada(listaOrdenada1);
     }
     const [show, setShow] = useState(false);
+
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -61,6 +67,8 @@ const Admin = (props) => {
         descripcionNoticia: "",
         cuerpoNoticia: "",
     };
+
+
 
 
     //enviar objetoa la api, operacion POST
