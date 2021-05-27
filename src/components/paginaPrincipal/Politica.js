@@ -1,17 +1,15 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import Albertofernandez from "../img/actualidad/albertofernandez.jpg";
-import Colombianos from "../img/actualidad/colombianos.jpg";
-import Aeropuerto from "../img/actualidad/aeropuerto.jpg";
 
-const Actualidad = (props) => {
+
+const Politica = (props) => {
   return (
     <div className="mb-5">
       <hr />
-      <h1 className="mx-3 my-4 text-center">Actualidad</h1>
+      <h1 className="mx-3 my-4 text-center">Politica</h1>
       <section className="d-flex justify-content-center">
-        <Card className="mr-4 noticiaPrincipal" style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={Albertofernandez} />
+        <Card className="m-4 noticiaPrincipal" style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="#"/>
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
             <Card.Text>
@@ -21,8 +19,8 @@ const Actualidad = (props) => {
             <Button variant="primary">Leer mas...</Button>
           </Card.Body>
         </Card>
-        <Card className="mr-4  noticiaPrincipal" style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={Colombianos} />
+        <Card className="m-4 noticiaPrincipal" style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="#" />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
             <Card.Text>
@@ -32,8 +30,8 @@ const Actualidad = (props) => {
             <Button variant="primary">Leer mas...</Button>
           </Card.Body>
         </Card>
-        <Card className="mr-4 noticiaPrincipal" style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={Aeropuerto} />
+        <Card className="m-4 noticiaPrincipal" style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="#" />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
             <Card.Text>
@@ -48,4 +46,4 @@ const Actualidad = (props) => {
   );
 };
 
-export default Actualidad;
+export default Politica;

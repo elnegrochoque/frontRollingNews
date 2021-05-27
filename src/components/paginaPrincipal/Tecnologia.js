@@ -4,7 +4,7 @@ import Iphone from '../img/tecnologia/iphone.webp';
 import Macbook from '../img/tecnologia/macbook.webp';
 import Trading from '../img/tecnologia/trading.webp';
 
-const Tecnologia = () => {
+const Tecnologia = (props) => {
   return (
     <div className="mb-5">
       <hr />

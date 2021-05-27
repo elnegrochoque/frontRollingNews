@@ -5,7 +5,7 @@ import Rugby from '../img/deporte/rugby.jpg';
 import Ufc from '../img/deporte/ufc.jpg';
 
 
-const Deportes = () => {
+const Deportes = (props) => {
   return (
     <div className="mb-5">
       <hr />

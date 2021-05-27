@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Navbar, Nav, Form, NavDropdown, FormControl, Button, Modal, FormCheck} from 'react-bootstrap';
+import {Navbar, Nav, Form, NavDropdown, Button, Modal } from 'react-bootstrap';
 import { NavLink} from 'react-router-dom';
 import './Navegacion.css';
 
@@ -17,16 +17,16 @@ return (
 <div className="margin-t-b">
     <Navbar style={{position: "sticky"}} bg="dark" variant="dark" expand="lg" fixed="top" className="navegacion">
 
-      <Navbar.Brand href="#home">Rolling News</Navbar.Brand>
+      <Navbar.Brand href="/">Rolling News</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link href="#">Actualidad</Nav.Link>
-          <Nav.Link href="#">Espectáculos</Nav.Link>
-          <Nav.Link href="#">Deportes</Nav.Link>
-          <Nav.Link href="#">Tecnología</Nav.Link>
+          <NavLink exact={true} to='/actualidad' className="nav-link">Actualidad</NavLink>
+          <NavLink exact={true} to='/deportes' className="nav-link">Deportes</NavLink>
+          <NavLink exact={true} to='/tecnologia' className="nav-link">Tecnología</NavLink>
+          <NavLink exact={true} to='/politica' className="nav-link">Política</NavLink>
           <NavDropdown title="Mas Secciones" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Política</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.1">Espectáculos</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Economía</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Salud</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.4">Fotografía</NavDropdown.Item>

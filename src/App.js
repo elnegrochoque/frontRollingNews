@@ -1,10 +1,15 @@
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Admin from "./components/administracion/Admin";
 import PaginaPrincipal from "./components/paginaPrincipal/PaginaPrincipal";
-
+import Actualidad from "./components/paginaPrincipal/Actualidad";
+import Deportes from "./components/paginaPrincipal/Deportes";
+import Tecnologia from "./components/paginaPrincipal/Tecnologia";
+import Politica from "./components/paginaPrincipal/Politica";
+import Navegacion from "./components/common/Navegacion";
+import Footer from "./components/common/Footer";
 
 function App() {
   const URL = process.env.REACT_APP_API_URL;
@@ -26,9 +31,9 @@ function App() {
     }
   };
 
-
   return (
     <Router>
+      <Navegacion></Navegacion>
       <Switch>
         <Route exact path="/">
           <PaginaPrincipal noticias={noticias} consultarAPI={consultarAPI} />
@@ -36,7 +41,27 @@ function App() {
         <Route exact path="/admin">
           <Admin noticias={noticias} consultarAPI={consultarAPI}></Admin>
         </Route>
+        <Route exact path="/actualidad">
+          <Actualidad
+            consultarAPI={consultarAPI}
+            noticias={noticias}
+          ></Actualidad>
+        </Route>
+        <Route exact path="/deportes">
+          <Deportes consultarAPI={consultarAPI} noticias={noticias}></Deportes>
+        </Route>
+        <Route exact path="/tecnologia">
+          <Tecnologia
+            consultarAPI={consultarAPI}
+            noticias={noticias}
+          ></Tecnologia>
+        </Route>
+        <Route exact path="/politica">
+          <Politica consultarAPI={consultarAPI} noticias={noticias}></Politica>
+        </Route>
+        <Route exact path=""></Route>
       </Switch>
+      <Footer></Footer>
     </Router>
   );
 }
