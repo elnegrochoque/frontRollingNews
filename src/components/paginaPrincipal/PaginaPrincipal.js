@@ -1,20 +1,23 @@
-import React from 'react';
-import Actualidad from './Actualidad';
-import Deportes from './Deportes';
-import Destacado from './Destacado';
-import Tecnologia from './Tecnologia';
-
+import React from "react";
+import Navegacion from "../common/Navegacion";
+import Actualidad from "./Actualidad";
+import Deportes from "./Deportes";
+import Destacado from "./Destacado";
+import Tecnologia from "./Tecnologia";
+import Politica from './Politica';
+import '../../App';
 
 const PaginaPrincipal = () => {
-    return (
-        <div>
-            <h1>Esta es la pagina de inicio</h1>
-            <Destacado/>
-            <Actualidad/>
-            <Deportes/>
-            <Tecnologia/>
-        </div>
-    );
+  return (
+    <>
+
+      <Destacado />
+      <Actualidad />
+      <Deportes />
+      <Tecnologia />
+      <Politica />
+    </>
+  );
 };
 
 export default PaginaPrincipal;

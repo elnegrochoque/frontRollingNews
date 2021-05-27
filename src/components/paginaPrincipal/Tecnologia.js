@@ -1,43 +1,46 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
+import Iphone from '../img/tecnologia/iphone.webp';
+import Macbook from '../img/tecnologia/macbook.webp';
+import Trading from '../img/tecnologia/trading.webp';
 
-const Tecnologia = () => {
+const Tecnologia = (props) => {
   return (
     <div className="mb-5">
       <hr />
-      <h1 className="mx-3 my-4">Tecnologia</h1>
-      <section className="d-flex">
-        <Card className="m-4 noticiaPrincipal">
-          <Card.Img variant="top" src="holder.js/100px180" />
+      <h1 className="mx-3 my-4 text-center">Tecnologia</h1>
+      <section className="d-flex justify-content-center">
+        <Card className="m-4 noticiaPrincipal" style={{ width: '18rem' }}>
+          <Card.Img variant="top" src={Iphone}/>
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">Leer mas...</Button>
           </Card.Body>
         </Card>
-        <Card className="m-4 noticiaPrincipal">
-          <Card.Img variant="top" src="holder.js/100px180" />
+        <Card className="m-4 noticiaPrincipal" style={{ width: '18rem' }}>
+          <Card.Img variant="top" src={Macbook} />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">Leer mas...</Button>
           </Card.Body>
         </Card>
-        <Card className="m-4 noticiaPrincipal">
-          <Card.Img variant="top" src="holder.js/100px180" />
+        <Card className="m-4 noticiaPrincipal" style={{ width: '18rem' }}>
+          <Card.Img variant="top" src={Trading} />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">Leer mas...</Button>
           </Card.Body>
         </Card>
       </section>
