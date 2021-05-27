@@ -1,15 +1,19 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
-import Admin from "./components/administracion/Admin";
+
+import { useState, useEffect } from 'react';
+import Admin from './components/administracion/Admin';
 import PaginaPrincipal from "./components/paginaPrincipal/PaginaPrincipal";
+
 import Actualidad from "./components/paginaPrincipal/Actualidad";
 import Deportes from "./components/paginaPrincipal/Deportes";
 import Tecnologia from "./components/paginaPrincipal/Tecnologia";
 import Politica from "./components/paginaPrincipal/Politica";
 import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
+import NuevaNoticia from './components/administracion/NuevaNoticia';
+import EditarNoticia from './components/administracion/EditarNoticia';
 
 function App() {
   const URL = process.env.REACT_APP_API_URL;
@@ -41,6 +45,14 @@ function App() {
         <Route exact path="/admin">
           <Admin noticias={noticias} consultarAPI={consultarAPI}></Admin>
         </Route>
+ <Route exact path="/admin/nuevanoticia">
+          <NuevaNoticia noticias={noticias} consultarAPI={consultarAPI}> </NuevaNoticia>
+        </Route>
+        <Route exact path="/admin/editarnoticia/:id">
+          <EditarNoticia noticias={noticias} consultarAPI={consultarAPI}></EditarNoticia>
+          
+        </Route>
+
         <Route exact path="/actualidad">
           <Actualidad
             consultarAPI={consultarAPI}
@@ -62,6 +74,12 @@ function App() {
         <Route exact path=""></Route>
       </Switch>
       <Footer></Footer>
+
+
+
+
+
+
     </Router>
   );
 }
