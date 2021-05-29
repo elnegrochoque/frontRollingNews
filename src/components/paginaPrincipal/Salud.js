@@ -1,18 +1,19 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import Messi from '../img/deporte/messi.jpeg';
-import Rugby from '../img/deporte/rugby.jpg';
-import Ufc from '../img/deporte/ufc.jpg';
+import Vacuna from '../img/salud/vacuna.webp';
+import Vacuna1 from '../img/salud/vacuna1.jpg';
+import Dengue from '../img/salud/dengue.jpg';
 
 
-const Deportes = (props) => {
+
+const Salud = (props) => {
   return (
     <div className="mb-5">
       <hr />
-      <h1 className="mx-3 my-4 text-center">Deportes</h1>
+      <h1 className="mx-3 my-4 text-center">Salud</h1>
       <section className="d-flex justify-content-center">
         <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={Messi} />
+          <Card.Img variant="top" src={Vacuna}/>
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
             <Card.Text>
@@ -23,7 +24,7 @@ const Deportes = (props) => {
           </Card.Body>
         </Card>
         <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={Rugby} />
+          <Card.Img variant="top" src={Vacuna1} />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
             <Card.Text>
@@ -34,7 +35,7 @@ const Deportes = (props) => {
           </Card.Body>
         </Card>
         <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={Ufc} />
+          <Card.Img variant="top" src={Dengue} />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
             <Card.Text>
@@ -49,4 +50,4 @@ const Deportes = (props) => {
   );
 };
 
-export default Deportes;
+export default Salud;
