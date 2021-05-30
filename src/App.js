@@ -19,6 +19,7 @@ import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
 import NuevaNoticia from "./components/administracion/NuevaNoticia";
 import EditarNoticia from "./components/administracion/EditarNoticia";
+import PropagandaCovid from "./components/common/PropagandaCovid";
 
 function App() {
   const URL = process.env.REACT_APP_API_URL;
@@ -43,6 +44,7 @@ function App() {
   return (
     <Router>
       <Navegacion></Navegacion>
+      <PropagandaCovid></PropagandaCovid>
       <Switch>
         <Route exact path="/">
           <PaginaPrincipal noticias={noticias} consultarAPI={consultarAPI} />

@@ -9,12 +9,13 @@ import Economia from './Economia';
 import Salud from './Salud';
 import Fotografia from './Fotografia';
 import '../../App.css';
-import '../paginaPrincipal/paginaPrincipal.css';
+import PropagandaCovid from "../common/PropagandaCovid";
+
 
 const PaginaPrincipal = () => {
   return (
     <>
-
+      
       <Destacado />
       <Actualidad />
       <Deportes />
