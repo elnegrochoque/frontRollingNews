@@ -117,7 +117,9 @@ const Navegacion = () => {
         </Modal.Body>
       </Modal>
     </div>
+
   );
+
 };
 
 export default Navegacion;
