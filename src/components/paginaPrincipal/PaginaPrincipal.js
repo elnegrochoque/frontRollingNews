@@ -32,7 +32,7 @@ const PaginaPrincipal = (props) => {
 
   return (
     <>
-      <Destacado />
+      <Destacado id="#destacado"/>
       
       <CadaCategoria categoria="actualidad" noticias={tresActualidad}></CadaCategoria>
       <CadaCategoria categoria="deportes" noticias={tresDeporte}></CadaCategoria>

@@ -60,6 +60,18 @@ function App() {
         <Route exact path="/politica">
           <CadaCategoria categoria="politica" noticias={noticias}></CadaCategoria>
         </Route>
+        <Route exact path="/salud">
+          <CadaCategoria categoria="salud" noticias={noticias}></CadaCategoria>
+        </Route>
+        <Route exact path="/economia">
+          <CadaCategoria categoria="economia" noticias={noticias}></CadaCategoria>
+        </Route>
+        <Route exact path="/espectaculos">
+          <CadaCategoria categoria="espectaculo" noticias={noticias}></CadaCategoria>
+        </Route>
+        <Route exact path="/fotografia">
+          <CadaCategoria categoria="fotografia" noticias={noticias}></CadaCategoria>
+        </Route>
         <Route exact path=""></Route>
       </Switch>
       <Footer></Footer>

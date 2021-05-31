@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 const ItemNoticia = (props) => {
-    console.log(props.noticia.tituloNoticia);
+
     const eliminarProducto = (id) => {
 
         const URL = process.env.REACT_APP_API_URL + '/' + id;

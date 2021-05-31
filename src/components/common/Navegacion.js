@@ -1,36 +1,67 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Form, NavDropdown, Button, Modal } from "react-bootstrap";
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navegacion.css";
 
+import Swal from 'sweetalert2';
 
 const Navegacion = () => {
   const [email, setEmail] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [showSus, setShowSus] = useState(false);
   const handleCloseSus = () => setShowSus(false);
-  const handleShowSus = () =>{
-
+  const handleShowSus = () => {
     setShowSus(true);
-
-  } 
-
+  }
+  const [sesionAbierta, setSesionAbierta] = useState();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () =>{
-    
+  const handleShow = () => {
+
     setShow(true);
-  } 
-  const acceso=(e)=>{
-    e.preventDefault();
-    if (email==="email@gmail.com"&&contraseña==="contraseña") {
-      document.getElementById("linkAdministracion").setAttribute('class','nav-link')
-      document.getElementById("botonLogin").setAttribute('class','invisible')
-      handleClose();
-    }
-    
-    
   }
+  const acceso = (e) => {
+    e.preventDefault();
+    if (email === "email@gmail.com" && contraseña === "contraseña") {
+     
+      setSesionAbierta(true);
+      handleClose();
+    }else{
+      Swal.fire(
+        'Acceso denegado',
+        'Ususario o contraseña no valido',
+        'error'
+      )
+
+    }
+  }
+  useEffect(() => {
+    if (sesionAbierta) {
+      document.getElementById("linkAdministracion").setAttribute('class', 'nav-link')
+      document.getElementById("botonLogin").setAttribute('class', 'd-none')
+      document.getElementById("botonCerrarSesion").setAttribute('class', 'mr-5')
+      console.log("hol")
+    } else {
+      document.getElementById("linkAdministracion").setAttribute('class', 'nav-link d-none')
+      document.getElementById("botonLogin").setAttribute('class', 'mr-5')
+      document.getElementById("botonCerrarSesion").setAttribute('class', 'd-none')
+      console.log("holaaa")
+    }
+
+
+  }, [sesionAbierta]);
+
+
+  // if (document.getElementById("botonCerrarSesion").getAttribute('class')==="invisible") {
+  //   console.log("hola")
+  // }
+  const cerrarSesion = (e) => {
+    e.preventDefault();
+    
+    setSesionAbierta(false);
+    handleClose();
+  }
+
   return (
     <div className="margin-t-b">
       <Navbar
@@ -59,28 +90,38 @@ const Navegacion = () => {
             </NavLink>
 
             <NavDropdown title="Mas Secciones" id="basic-nav-dropdown">
-              <NavLink exact={true}  to="/espectaculos" className="dropdown-item">
+              <NavLink exact={true} to="/espectaculos" className="dropdown-item">
                 Espectáculos
               </NavLink>
-              <NavLink exact={true}  to="/economia" className="dropdown-item">
+              <NavLink exact={true} to="/economia" className="dropdown-item">
                 Economía
               </NavLink>
-              <NavLink exact={true}  to="/salud" className="dropdown-item">
+              <NavLink exact={true} to="/salud" className="dropdown-item">
                 Salud
               </NavLink>
-              <NavLink exact={true}  to="/fotografia" className="dropdown-item">
+              <NavLink exact={true} to="/fotografia" className="dropdown-item">
                 Fotografía
               </NavLink>
             </NavDropdown>
-            <NavLink id="linkAdministracion" exact={true} to="/admin" className="nav-link invisible" type="hidden">
+            <NavLink id="linkAdministracion" exact={true} to="/admin" className="nav-link d-none" >
               Administracion
             </NavLink>
           </Nav>
           <Form className="ml-auto" inline>
-            <Button id="botonLogin" variant="danger" className="mr-3" onClick={handleShow}>
-              Login
+            <div id="botonCerrarSesion" className="mr-3 d-none" >
+              <Button variant="primary" onClick={cerrarSesion}>
+                Cerrar sesion
             </Button>
-            <Button variant="primary" onClick={handleShowSus}>
+            </div>
+            <div id="botonLogin" className="mr-3" >
+
+              <Button variant="danger" className="mr-3" onClick={handleShow}>
+                Login
+            </Button>
+            </div>
+
+
+            <Button variant="primary" onClick={handleShowSus} >
               Suscripción
             </Button>
           </Form>
@@ -95,7 +136,7 @@ const Navegacion = () => {
           <Form onSubmit={acceso}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Ingresa tu Email</Form.Label>
-              <Form.Control type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
+              <Form.Control type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
               <Form.Text className="text-muted">
                 No compartiremos tu dirección de email con nadie.
               </Form.Text>
@@ -108,7 +149,7 @@ const Navegacion = () => {
             <Form.Group className="mb-4" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Recuerdame" />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary"  type="submit">
               Ingresa
             </Button>
           </Form>
