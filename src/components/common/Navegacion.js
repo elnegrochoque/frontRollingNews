@@ -5,14 +5,32 @@ import "./Navegacion.css";
 
 
 const Navegacion = () => {
+  const [email, setEmail] = useState("");
+  const [contraseña, setContraseña] = useState("");
   const [showSus, setShowSus] = useState(false);
   const handleCloseSus = () => setShowSus(false);
-  const handleShowSus = () => setShowSus(true);
+  const handleShowSus = () =>{
+
+    setShowSus(true);
+
+  } 
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+  const handleShow = () =>{
+    
+    setShow(true);
+  } 
+  const acceso=(e)=>{
+    e.preventDefault();
+    if (email==="email@gmail.com"&&contraseña==="contraseña") {
+      document.getElementById("linkAdministracion").setAttribute('class','nav-link')
+      document.getElementById("botonLogin").setAttribute('class','invisible')
+      handleClose();
+    }
+    
+    
+  }
   return (
     <div className="margin-t-b">
       <Navbar
@@ -54,12 +72,12 @@ const Navegacion = () => {
                 Fotografía
               </NavLink>
             </NavDropdown>
-            <NavLink exact={true} to="/admin" className="nav-link">
+            <NavLink id="linkAdministracion" exact={true} to="/admin" className="nav-link invisible" type="hidden">
               Administracion
             </NavLink>
           </Nav>
           <Form className="ml-auto" inline>
-            <Button variant="danger" className="mr-3" onClick={handleShow}>
+            <Button id="botonLogin" variant="danger" className="mr-3" onClick={handleShow}>
               Login
             </Button>
             <Button variant="primary" onClick={handleShowSus}>
@@ -74,10 +92,10 @@ const Navegacion = () => {
           <Modal.Title>Ingresa!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={acceso}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Ingresa tu Email</Form.Label>
-              <Form.Control type="email" placeholder="Email" />
+              <Form.Control type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
               <Form.Text className="text-muted">
                 No compartiremos tu dirección de email con nadie.
               </Form.Text>
@@ -85,7 +103,7 @@ const Navegacion = () => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Ingresa tu Contraseña</Form.Label>
-              <Form.Control type="password" placeholder="Contraseña" />
+              <Form.Control type="password" placeholder="Contraseña" onChange={(e) => setContraseña(e.target.value)} />
             </Form.Group>
             <Form.Group className="mb-4" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Recuerdame" />
