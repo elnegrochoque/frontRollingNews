@@ -32,7 +32,7 @@ const PropagandaCovid = () => {
     </div>
 
       <div className="covid-stats  d-flex justify-content-center align-items-center mt-4 pt-2">
-        <h4 className="mr-4 ">Coronavirus:</h4>
+        <h4 className="mr-4 titulo-covid">Coronavirus:</h4>
 
         <ul className="row place-list mt-2">
           <a href="" className="text-decoration-none">

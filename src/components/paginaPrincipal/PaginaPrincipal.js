@@ -33,6 +33,7 @@ const PaginaPrincipal = (props) => {
 
   return (
     <>
+    <PropagandaCovid></PropagandaCovid>
       <Destacado id="#destacado"/>
       
       <CadaCategoria categoria="actualidad" noticias={tresActualidad}></CadaCategoria>
