@@ -60,10 +60,8 @@ const EditarNoticia = (props) => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // revisar si la categoria cambio
+  
     
-
-    // validar los datos
     if (campoRequerido(tituloNoticiaRef.current.value)) {
       // esta todo bien
       //armar el objeto a enviar

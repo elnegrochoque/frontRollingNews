@@ -14,6 +14,7 @@ import CadaCategoria from "./components/paginaPrincipal/CadaCategoria";
 import AcercaNosotros from './components/acercaDeNosotros';
 import Contacto from './components/contacto';
 import PropagandaCovid from "./components/common/PropagandaCovid";
+import DetalleNoticia from "./components/noticias/DetalleNoticia";
 
 function App() {
   const URL = process.env.REACT_APP_API_URL;
@@ -50,6 +51,10 @@ function App() {
         </Route>
         <Route exact path="/admin/editarnoticia/:id">
           <EditarNoticia noticias={noticias} consultarAPI={consultarAPI}></EditarNoticia>
+          
+        </Route>
+        <Route exact path="/noticia/:id">
+          <DetalleNoticia noticias={noticias} consultarAPI={consultarAPI}></DetalleNoticia>
         </Route>
         <Route exact path="/actualidad">
         <CadaCategoria categoria="actualidad" noticias={noticias}></CadaCategoria>
@@ -83,6 +88,7 @@ function App() {
         <Contacto></Contacto>
         </Route>
         <Route exact path=""></Route>
+      
         
       </Switch>
       <Footer></Footer>
