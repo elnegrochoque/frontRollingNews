@@ -8,9 +8,10 @@ const CardNoticia = (props) => {
 // console.log(props.noticia.urlImagen)
 // console.log("../img/actualidad/albertofernandez.jpg")
 
+
     return (
         
-        <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" style={{ width: "18rem" }}>
+        <Card className="m-4 cards text-center bg-light text-secondary animate__animated animate__fadeInUp" style={{ width: "18rem" }}>
             <Card.Img variant="top" src={imagen} />
         
             <Card.Body>

@@ -6,7 +6,17 @@
 
 .card-body {
   padding: 2rem 0 !important;
+
 }
+
+
+.card-text:hover {
+  padding: 0.3rem 1rem;
+  font-weight: bolder;
+  color: rgb(26, 26, 26);
+
+}
+
 
 .card-text {
   padding: 0.3rem 1rem;
@@ -25,5 +35,6 @@
 
 .cards:hover {
   transform: scale(1.1);
+
 
 }

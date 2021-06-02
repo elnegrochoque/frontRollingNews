@@ -13,7 +13,7 @@ const Destacado = () => {
       <div className="row mb-5 container-fluid d-flex justify-content-center">
 
         <section className="col-lg-6">
-          <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp">
+          <Card className="m-4 cards text-center bg-light text-secondary animate__animated animate__fadeInUp">
             <Card.Img variant="top" src={alberto} className="w-100" />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
@@ -28,7 +28,7 @@ const Destacado = () => {
           </Card>
         </section>
         <section className="col-lg-3">
-          <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp">
+          <Card className="m-4 cards text-center bg-light text-secondary animate__animated animate__fadeInUp">
             <Card.Img variant="top" src={dollar} />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
@@ -39,7 +39,7 @@ const Destacado = () => {
               <Button variant="primary">Leer más...</Button>
             </Card.Body>
           </Card>
-          <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp">
+          <Card className="m-4 cards text-center bg-light text-secondary animate__animated animate__fadeInUp">
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
               <Card.Text>

@@ -24,7 +24,7 @@
 
 
 
-h4{
+.titulo-covid{
   background-color: #9B1217;
   border: 5px solid #9B1217;
   border-radius: 15px;
@@ -51,4 +51,10 @@ font-weight:bolder;
 
 .segundo-header{
   background-color:rgb(243, 243, 238);
+}
+
+.titulo-categoria{
+  background-color: #9B1217;
+  border: 5px solid #9B1217;
+  border-radius: 15px;
 }

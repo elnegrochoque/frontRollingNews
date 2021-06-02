@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Nav, Form, NavDropdown, Button, Modal } from "react-bootstrap";
+import { Navbar, Nav, Form, NavDropdown, Button, Modal, Col } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Navegacion.css";
 
@@ -23,10 +23,10 @@ const Navegacion = () => {
   const acceso = (e) => {
     e.preventDefault();
     if (email === "email@gmail.com" && contraseña === "contraseña") {
-     
+
       setSesionAbierta(true);
       handleClose();
-    }else{
+    } else {
       Swal.fire(
         'Acceso denegado',
         'Ususario o contraseña no valido',
@@ -57,11 +57,19 @@ const Navegacion = () => {
   // }
   const cerrarSesion = (e) => {
     e.preventDefault();
-    
+
     setSesionAbierta(false);
     handleClose();
   }
-
+  const exitoSuscripcion=(e)=>{
+    e.preventDefault();
+    
+    Swal.fire(
+      'Suscripto',
+      'Sus datos fueron registrados, nos pondremos en contacto con usted',
+      'success'
+    )
+  }
   return (
     <div className="margin-t-b">
       <Navbar
@@ -149,7 +157,7 @@ const Navegacion = () => {
             <Form.Group className="mb-4" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Recuerdame" />
             </Form.Group>
-            <Button variant="primary"  type="submit">
+            <Button variant="primary" type="submit">
               Ingresa
             </Button>
           </Form>
@@ -162,14 +170,30 @@ const Navegacion = () => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Ingresa tu Email</Form.Label>
-              <Form.Control type="email" placeholder="Email" />
-              <Form.Text className="text-muted">
-                No compartiremos tu dirección de email con nadie.
-              </Form.Text>
+            <Form.Row>
+              <Col>
+                <Form.Control placeholder="Nombre" />
+              </Col>
+              <Col>
+                <Form.Control placeholder="Apellido" />
+              </Col>
+            </Form.Row>
+            <Form.Group controlId="formGridAddress1" className="py-2">
+              <Form.Control placeholder="Dirección" />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Form.Group controlId="formGridCity">
+              <Form.Control placeholder="Localidad" />
+            </Form.Group>
+            <Form.Group controlId="formGridZip">
+              <Form.Control placeholder="Código Postal" />
+            </Form.Group>
+            <Form.Group controlId="formGridNumber">
+              <Form.Control placeholder="Teléfono" />
+            </Form.Group>
+            <Form.Group controlId="formGridEmail">
+              <Form.Control type="email" placeholder="Ingresa tu Email" />
+            </Form.Group>
+            <Button variant="primary" type="submit" onClick={exitoSuscripcion}>
               Enviar
             </Button>
           </Form>

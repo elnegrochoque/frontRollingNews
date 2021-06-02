@@ -1,6 +1,6 @@
 
 import React, { Fragment } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Container } from "react-bootstrap";
 import alberto from "../img/destacado/albertof.jpg";
 import dollar from "../img/destacado/dollars.jpg";
 import '../paginaPrincipal/paginaPrincipal.css';
@@ -21,7 +21,10 @@ const CadaCategoria = (props) => {
     return (
         <div className="mb-5">
             <hr />
-            <h1 className="mx-3 my-4 text-center">{props.categoria.toUpperCase()}</h1>
+            <div className="container">
+                <h1 className="mx-3 my-4 titulo-categoria text-center text-light">{props.categoria.toUpperCase()}</h1>
+            </div>
+            
             <section className="d-flex justify-content-center flex-wrap">
 
                 {(noticiasCategoria.length === 0) ? "" :

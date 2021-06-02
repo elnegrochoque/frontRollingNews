@@ -5,6 +5,7 @@ import '../../App.css';
 import PropagandaCovid from "../common/PropagandaCovid";
 import CadaCategoria from "../paginaPrincipal/CadaCategoria";
 
+
 const PaginaPrincipal = (props) => {
 
 
