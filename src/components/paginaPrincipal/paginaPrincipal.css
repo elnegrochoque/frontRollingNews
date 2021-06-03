@@ -1,0 +1,40 @@
+
+.cards:hover {
+  box-shadow: 7px 10px 20px 1px rgb(0, 0, 0) !important;
+  transition: all 0.2s linear;
+}
+
+.card-body {
+  padding: 2rem 0 !important;
+
+}
+
+
+.card-text:hover {
+  padding: 0.3rem 1rem;
+  font-weight: bolder;
+  color: rgb(26, 26, 26);
+
+}
+
+
+.card-text {
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.cards{
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+
+}
+
+.cards:hover {
+  transform: scale(1.1);
+
+
+}
