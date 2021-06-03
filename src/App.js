@@ -13,7 +13,7 @@ import EditarNoticia from './components/administracion/EditarNoticia';
 import CadaCategoria from "./components/paginaPrincipal/CadaCategoria";
 import AcercaNosotros from './components/acercaDeNosotros';
 import Contacto from './components/contacto';
-import PropagandaCovid from "./components/common/PropagandaCovid";
+
 import DetalleNoticia from "./components/noticias/DetalleNoticia";
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
       const respuesta = await consulta.json();
 
       setNoticias(respuesta);
-      console.log(respuesta);
+
     } catch (error) {
       console.log(error);
     }

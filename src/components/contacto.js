@@ -1,7 +1,8 @@
 import React from "react";
-import { Row, Form, Button, Col } from "react-bootstrap";
+import { Form, Button, Col } from "react-bootstrap";
 
 const contacto = () => {
+
     return (
         <div className="col-md-4 container py-4">
             <h1 className="text-center titulo-covid">Contactanos</h1>
@@ -20,9 +21,9 @@ const contacto = () => {
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Control as="textarea" rows={3} />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" href="/">
                     Enviar
-        </Button>
+                </Button>
             </Form>
         </div>
     );

@@ -1,8 +1,6 @@
 
-import React, { Fragment } from "react";
-import { Card, Button, Container } from "react-bootstrap";
-import alberto from "../img/destacado/albertof.jpg";
-import dollar from "../img/destacado/dollars.jpg";
+import React  from "react";
+
 import '../paginaPrincipal/paginaPrincipal.css';
 import CardNoticia from "./CardNoticia";
 
@@ -12,7 +10,7 @@ const CadaCategoria = (props) => {
     const noticiasCategoria = []
 
     for (const i in props.noticias) {
-        if (props.noticias[i].categoria === props.categoria && props.noticias[i].tituloNoticia != "Este item es una categoria") {
+        if (props.noticias[i].categoria === props.categoria && props.noticias[i].tituloNoticia !== "Este item es una categoria") {
 
             noticiasCategoria.push(props.noticias[i]);
        
@@ -31,7 +29,7 @@ const CadaCategoria = (props) => {
                     noticiasCategoria.map((noticia) =>
                         <CardNoticia
                             noticia={noticia}
-                            key={noticia.id}
+                            key={noticia._id}
                             consultarAPI={props.consultarAPI}>
                         </CardNoticia>
                     )}

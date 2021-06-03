@@ -143,7 +143,7 @@ return (
                             (noticia) =>
                             <ItemNoticia
                                 noticia={noticia}
-                                key={noticia.id}
+                                key={noticia._id}
                                 consultarAPI={props.consultarAPI}>
                             </ItemNoticia>
                         )
@@ -151,7 +151,7 @@ return (
                         listaOrdenada.map((noticia) =>
                             <ItemNoticia
                                 noticia={noticia}
-                                key={noticia.id}
+                                key={noticia._id}
                                 consultarAPI={props.consultarAPI}>
                             </ItemNoticia>
                         )

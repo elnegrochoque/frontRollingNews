@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Row } from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
 
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
@@ -7,9 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 const ItemNoticia = (props) => {
 
-    const eliminarProducto = (id) => {
+    const eliminarProducto = (_id) => {
 
-        const URL = process.env.REACT_APP_API_URL + '/' + id;
+        const URL = process.env.REACT_APP_API_URL + '/' + _id;
 
 
         Swal.fire({
@@ -72,7 +72,7 @@ const ItemNoticia = (props) => {
 
 
     return (
-        <tr key={props.noticia.id}>
+        <tr key={props.noticia._id}>
             <td>
                 <span className='font-weight-bold'> {props.noticia.tituloNoticia}</span>
             </td>
@@ -80,15 +80,16 @@ const ItemNoticia = (props) => {
                 <span className='font-weight-bold'> {props.noticia.categoria}</span>
             </td>
             <td>
-                <p>{props.noticia.id}</p>
+                <p>{props.noticia._id}</p>
             </td>
             <td >
 
 
-                <Button variant='danger' onClick={() => eliminarProducto(props.noticia.id)}>
+                <Button variant='danger' onClick={() => eliminarProducto(props.noticia._id)}>
                     <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
                 </Button>
-                {(props.noticia.tituloNoticia === "Este item es una categoria") ? <span></span> : <Link to={`admin/editarnoticia/${props.noticia.id}`} className="btn btn-warning mr-2">
+                {(props.noticia.tituloNoticia === "Este item es una categoria") ? <span></span> :
+                <Link to={`admin/editarnoticia/${props.noticia._id}`} className="btn btn-warning mr-2">
                     <FontAwesomeIcon icon={faPencilAlt} ></FontAwesomeIcon>
                 </Link>}
 

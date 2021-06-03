@@ -40,12 +40,12 @@ const Navegacion = () => {
       document.getElementById("linkAdministracion").setAttribute('class', 'nav-link')
       document.getElementById("botonLogin").setAttribute('class', 'd-none')
       document.getElementById("botonCerrarSesion").setAttribute('class', 'mr-5')
-      console.log("hol")
+     
     } else {
       document.getElementById("linkAdministracion").setAttribute('class', 'nav-link d-none')
       document.getElementById("botonLogin").setAttribute('class', 'mr-5')
       document.getElementById("botonCerrarSesion").setAttribute('class', 'd-none')
-      console.log("holaaa")
+      
     }
 
 

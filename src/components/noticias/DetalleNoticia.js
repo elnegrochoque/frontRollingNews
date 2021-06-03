@@ -23,9 +23,7 @@ const DetalleNoticia = (props) => {
         }
       }
     const { id } = useParams();
-    console.log(id);
-    console.log(noticia)
-
+    
     return (
         <Fragment>
             <Container>

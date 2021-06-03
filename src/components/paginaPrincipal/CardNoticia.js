@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import imagen from "../img/actualidad/albertofernandez.jpg";
+import React from 'react';
 import { Card, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 
@@ -20,7 +19,7 @@ const CardNoticia = (props) => {
                 <Card.Text>
                 {props.noticia.tituloExtendido}
             </Card.Text>
-            <Link to={`noticia/${props.noticia.id}`} className="mr-2">
+            <Link to={`noticia/${props.noticia._id}`} className="mr-2">
             <Button variant="primary">Leer mas...</Button>
                 </Link>
                 

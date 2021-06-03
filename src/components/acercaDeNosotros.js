@@ -34,7 +34,7 @@ const acercaDeNosotros = () => {
                     </Card.Body>
                 </Card>
                 <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" >
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Img variant="top" src="https://scontent.ftuc4-1.fna.fbcdn.net/v/t1.18169-9/249723_10150194972694070_1005028_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=cdbe9c&_nc_eui2=AeHS9ctOu1qMeNG8axzFLJiyYIRsNuYIB71ghGw25ggHvcTofgMcX5gqQ_3u_taONOY&_nc_ohc=GIP2eCYYNyAAX_qbPVu&_nc_ht=scontent.ftuc4-1.fna&oh=fd20c8adb229300fb461cd92fa7ce021&oe=60DBF027" />
                     <Card.Body>
                         <Card.Title>Card title</Card.Title>
                         <Card.Text>
@@ -44,7 +44,7 @@ const acercaDeNosotros = () => {
                     </Card.Body>
                 </Card>
                 <Card className="m-4 cards text-center bg-dark text-secondary animate__animated animate__fadeInUp" >
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Img variant="top" src="https://scontent.ftuc1-1.fna.fbcdn.net/v/t1.6435-9/127542376_100401761930020_53945942128344134_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ySOX6JBAr_MAX8W6c9O&_nc_ht=scontent.ftuc1-1.fna&oh=835b7021c96dd02250b79a4307cfedfb&oe=60DCF520" />
                     <Card.Body>
                         <Card.Title>Card title</Card.Title>
                         <Card.Text>

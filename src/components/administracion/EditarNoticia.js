@@ -22,7 +22,7 @@ const EditarNoticia = (props) => {
   const fechaNoticiaRef = useRef('');
   const horaNoticiaRef = useRef('');
   const autorNoticiaRef = useRef('');
-  const categoriaNoticiaRef = useRef('');
+
   const descripcionPequeñaNoticiaRef = useRef('');
   const cuerpoNoticiaRef = useRef('');
   
